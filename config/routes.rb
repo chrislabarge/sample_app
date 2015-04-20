@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   
 
-  root             'static_pages#home' #The comment sign stands for the method name in the controller
-  get 'about'   => 'static_pages#about'
-  get 'contact' => 'static_pages#contact'
-  get 'help'    => 'static_pages#help'
-  get 'signup'  => 'users#new'
+  get 'sessions/new'
+
+  root               'static_pages#home' #The comment sign stands for the method name in the controller
+  get 'about'     => 'static_pages#about'
+  get 'contact'   => 'static_pages#contact'
+  get 'help'      => 'static_pages#help'
+  get 'signup'    => 'users#new'
+  get 'login'     => 'sessions#new'
+  post 'login'    => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
