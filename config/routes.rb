@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+  get 'account_activations/edit'
+
   get 'sessions/new'
 
   root               'static_pages#home' #The comment sign stands for the method name in the controller
@@ -8,10 +10,11 @@ Rails.application.routes.draw do
   get 'contact'   => 'static_pages#contact'
   get 'help'      => 'static_pages#help'
   get 'signup'    => 'users#new'
-  get 'login'     => 'sessions#new'
+  get 'login'     => 'sessions#new' 
   post 'login'    => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   resources :users
+  resources :account_activations, only: [:edit]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
