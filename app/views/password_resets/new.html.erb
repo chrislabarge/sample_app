@@ -1,0 +1,22 @@
+<%provide :title, "Forgot Password"%>
+
+<h1>Forgot Password</h1>
+
+
+<div class="row">
+	<div class="col-xs-6 col-xs-offset-3">
+			<%= form_for(:password_reset, url: password_resets_path ) do |f| %> <!-- this is the way to make a form that doesnt use an active record object like the new user sign-up form does.  This is how we point it at a symbol and give it a path, |f | refers to the :session symbol and hashed the params below to it-->
+					
+
+				<%= f.label :email%>
+				<%= f.email_field :email, class: 'form-control'%>
+
+			
+				
+
+				<%= f.submit "Submit", class: "btn btn-primary" %>
+			<% end %>
+		
+
+	</div>
+</div>

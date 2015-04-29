@@ -3,7 +3,7 @@
 <h1>Log In</h1>
 
 <div class="row">
-	<div class="col-xs-6 col-xs-offset-3">
+	<div class="col-sm-6 col-sm-offset-3">
 			<%= form_for(:session, url: login_path ) do |f| %> <!-- this is the way to make a form that doesnt use an active record object like the new user sign-up form does.  This is how we point it at a symbol and give it a path, |f | refers to the :session symbol and hashed the params below to it-->
 					
 
@@ -11,6 +11,7 @@
 				<%= f.email_field :email, class: 'form-control'%>
 
 				<%= f.label :password%>
+				<%= link_to "(forgot password)", new_password_reset_path%>
 				<%= f.password_field :password, class: 'form-control'%>
 				
 				<%= f.label :remember_me, class: "checkbox inline" do%>
