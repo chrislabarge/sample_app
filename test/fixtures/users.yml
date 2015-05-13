@@ -24,7 +24,7 @@ bob:
   activated: true
   activated_at: <%= Time.zone.now %>
 
-Tom:
+tom:
   name: Tom Archer	
   email: Tom@poop.com
   password_digest: <%= User.digest('password')%>  

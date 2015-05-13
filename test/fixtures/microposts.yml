@@ -1,0 +1,27 @@
+orange:
+ content: "I just ate an orange!"
+ created_at: <%= 10.minutes.ago %>
+ user: chris
+
+apple:
+ content: "I just ate an apple!"
+ created_at: <%= 3.years.ago %>
+ user: archer
+
+pear: 
+ content: "I just ate a pear"
+ created_at: <%= 2.hours.ago %>
+ user: bob
+
+most_recent:
+ content: "Writing a short test"
+ created_at: <%= Time.zone.now  %>
+ user: tom
+
+<% 30.times do |n| %>
+
+microposts_<%= n %>:
+  content: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 42.days.ago %>
+  user: chris
+<% end %> 
